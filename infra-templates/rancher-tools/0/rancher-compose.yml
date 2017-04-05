@@ -1,0 +1,13 @@
+.catalog:
+    name: "Rancher Tools"
+    version: v0.0.1
+    description: "Volume plugin that provides access to Giddyup and Confd"
+    minimum_rancher_version: v1.4.99
+tools-driver:
+  storage_driver:
+    name: rancher-tools
+    description: "A tmpfs driver for secrets"
+    scope: local
+    create_supported: false
+    volume_access_mode: singleHostRW
+    start_on_create: true

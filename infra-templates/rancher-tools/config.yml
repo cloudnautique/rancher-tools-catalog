@@ -1,0 +1,5 @@
+name: Rancher Tools Volume Driver
+description: "Rancher tools volume driver to deliver binaries"
+version: v0.0.1
+category: Storage
+maintainer: bill@rancher.com

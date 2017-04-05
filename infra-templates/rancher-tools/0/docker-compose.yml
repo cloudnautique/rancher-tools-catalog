@@ -1,0 +1,23 @@
+version: '2'
+services:
+  tools-driver:
+    privileged: true
+    image: cloudnautique/storage-tools:v0.7.0
+    network_mode: host
+    environment:
+        RANCHER_DEBUG: true
+    volumes:
+    - /var/run:/var/run
+    - /run:/run
+    - /dev:/host/dev
+    - /var/lib/rancher/volumes:/var/lib/rancher/volumes:shared
+    logging:
+      driver: json-file
+      options:
+        max-file: '2'
+        max-size: 25m
+    labels:
+      io.rancher.container.agent.role: environment
+      io.rancher.container.create_agent: 'true'
+      io.rancher.scheduler.global: 'true'
+      io.rancher.container.pull_image: always
